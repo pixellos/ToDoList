@@ -1,0 +1,62 @@
+﻿<Window x:Class="MvvmLight1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        Height="336"
+        Width="464"
+        Title="MVVM Light Application">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Mode="OneWay" Source="{StaticResource Locator}"/>
+    </Window.DataContext>
+
+    <Grid x:Name="LayoutRoot" Margin="0,-1">
+        <TextBlock FontSize="36"
+                   FontWeight="Bold"
+                   Foreground="Purple"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap" Margin="146,157,146,202" />
+        <TextBox x:Name="textBox" Height="23" Margin="10,10,22,0" TextWrapping="Wrap" Text="{Binding DataOperationViewModel.TaskName}" VerticalAlignment="Top" BorderBrush="Black" ToolTip="{Binding InterfaceDataViewModel.TaskName}"/>
+        <TextBox x:Name="textBox1" Height="27" Margin="10,43,72,0" TextWrapping="Wrap" Text="{Binding DataOperationViewModel.Tags}" VerticalAlignment="Top" BorderBrush="Black" ToolTip="{Binding InterfaceDataViewModel.TaskTags}"/>
+        <ComboBox x:Name="comboBox" Height="30" Margin="10,70,72,0" VerticalAlignment="Top" ItemsSource="{Binding InterfaceDataViewModel.Pirority}" Background="{x:Null}" BorderBrush="{x:Null}" SelectedIndex="{Binding DataOperationViewModel.TaskPirority}" />
+        <Button x:Name="button" Content="{Binding InterfaceDataViewModel.AddButtonName}" Command="{Binding DataOperationViewModel.TaskAddCommand}" Margin="0,38,22,0" VerticalAlignment="Top" Height="62" HorizontalAlignment="Right" Width="35" Background="{x:Null}" BorderBrush="Black">
+            <Button.CacheMode>
+                <BitmapCache/>
+            </Button.CacheMode>
+        </Button>
+        <ListView x:Name="listView" Margin="10,115,22,17" ItemsSource="{Binding DataOperationViewModel.TaskItems}" BorderBrush="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="{Binding InterfaceDataViewModel.ListNameDescription}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Tags}" Header="{Binding InterfaceDataViewModel.ListTagsDescription}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TaskPirority}" Header="{Binding InterfaceDataViewModel.ListTaskPirorityDescription}"/>
+                    <GridViewColumn Header="{Binding InterfaceDataViewModel.ListIsDoneDescription}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsCompleted}" Command="{Binding DataOperationViewModel.ModifyCommand, Source={StaticResource Locator}}" CommandParameter="{Binding Mode=OneWay}"></CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button CommandParameter="{Binding AccessName}" Command="{Binding DataOperationViewModel.DeleteCommand, Source={StaticResource Locator}}" Content="Del"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
