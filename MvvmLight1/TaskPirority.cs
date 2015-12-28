@@ -1,4 +1,4 @@
-﻿namespace MvvmLight1
+﻿namespace PixelloToDo
 {
     public enum TaskPirority
     {

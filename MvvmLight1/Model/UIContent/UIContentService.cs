@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Threading.Tasks;
 using PixelloTools.Logging;
 using PixelloTools.XmlObject;
 
-namespace MvvmLight1.Model.UIContent
+namespace PixelloToDo.Model.UIContent
 {
     public class UIContentService :ObjectSerializer<IUIContentItem> ,IUIContentService
     {

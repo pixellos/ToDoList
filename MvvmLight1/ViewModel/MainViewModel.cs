@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 
-namespace MvvmLight1.ViewModel
+namespace PixelloToDo.ViewModel
 {
     public class MainViewModel : ViewModelBase{}
 }

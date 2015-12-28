@@ -1,7 +1,6 @@
 using System;
-using System.Threading.Tasks;
 
-namespace MvvmLight1.Model.UIContent
+namespace PixelloToDo.Model.UIContent
 {
     public interface IUIContentService
     {

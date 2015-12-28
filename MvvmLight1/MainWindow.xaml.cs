@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
-using MvvmLight1.ViewModel;
+using PixelloToDo.ViewModel;
 
-namespace MvvmLight1
+namespace PixelloToDo
 {
     public partial class MainWindow : Window
     {

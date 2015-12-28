@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace MvvmLight1.Model.Tasks
+namespace PixelloToDo.Model.Tasks
 {
     public interface ITaskService
     {

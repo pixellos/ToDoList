@@ -1,4 +1,4 @@
-﻿namespace MvvmLight1.Model.Tasks
+﻿namespace PixelloToDo.Model.Tasks
 {
     public class TaskItem
     {

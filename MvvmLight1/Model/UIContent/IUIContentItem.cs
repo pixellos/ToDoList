@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MvvmLight1.Model.UIContent
+namespace PixelloToDo.Model.UIContent
 {
     [Serializable]
     public class IUIContentItem : IUIContent

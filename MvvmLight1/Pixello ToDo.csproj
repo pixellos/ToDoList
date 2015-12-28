@@ -7,8 +7,8 @@
     <ProjectGuid>{0F944A7D-573A-418D-8376-AC59B359FEC1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmLight1</RootNamespace>
-    <AssemblyName>MvvmLight1</AssemblyName>
+    <RootNamespace>PixelloToDo</RootNamespace>
+    <AssemblyName>Pixello ToDo</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -104,9 +104,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Design\TaskService.cs" />
-    <Compile Include="Design\UIContentService.cs" />
-    <Compile Include="Model\UIContent\UIContentItem.cs" />
+    <Compile Include="Design\DesingTaskService.cs" />
+    <Compile Include="Design\DesingUIContentService.cs" />
+    <Compile Include="Model\UIContent\IUIContentItem.cs" />
     <Compile Include="Model\UIContent\UIContentService.cs" />
     <Compile Include="Model\UIContent\IUIContent.cs" />
     <Compile Include="Model\UIContent\IUIContentService.cs" />

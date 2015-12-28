@@ -1,11 +1,12 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-using MvvmLight1.Model.Tasks;
-using MvvmLight1.Model.UIContent;
+using PixelloToDo.Design;
+using PixelloToDo.Model.Tasks;
+using PixelloToDo.Model.UIContent;
 using PixelloTools.Logging;
 
-namespace MvvmLight1.ViewModel
+namespace PixelloToDo.ViewModel
 {
     public class ViewModelLocator
     {

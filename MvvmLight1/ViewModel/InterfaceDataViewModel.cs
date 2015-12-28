@@ -1,10 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using System.Threading;
 using GalaSoft.MvvmLight;
-using MvvmLight1.Model.UIContent;
+using PixelloToDo.Model.UIContent;
 using PixelloTools.Logging;
 
-namespace MvvmLight1.ViewModel
+namespace PixelloToDo.ViewModel
 {
     public class InterfaceDataViewModel : ViewModelBase
     {

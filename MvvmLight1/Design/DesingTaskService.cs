@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using PixelloToDo.Model.Tasks;
 using PixelloTools.Logging;
 using PixelloTools.XmlObject;
 
-namespace MvvmLight1.Model.Tasks
+namespace PixelloToDo.Design
 {
     public class DesingTaskService : ObjectSerializer<TaskItem>, ITaskService
     {

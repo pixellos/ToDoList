@@ -3,10 +3,10 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using MvvmLight1.Model.Tasks;
+using PixelloToDo.Model.Tasks;
 using PixelloTools.Logging;
 
-namespace MvvmLight1.ViewModel
+namespace PixelloToDo.ViewModel
 {
     public class DataOperationViewModel : ViewModelBase
     {
