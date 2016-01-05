@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using PixelloTools.Logging;
 using PixelloTools.XmlObject;
@@ -29,6 +30,11 @@ namespace PixelloToDo.Model.Tasks
                 () => new ObservableCollection<TaskItem>(GetTasksCollection()));
             task.Start();
             return await task;
+        }
+
+        public void OpenFile(string accessName)
+        {
+            Process.Start(PathBuilder.FilePath(accessName));
         }
 
         public void DeleteTask(string accessName)

@@ -7,7 +7,7 @@
         mc:Ignorable="d ignore"
         Height="336"
         Width="464"
-        Title="MVVM Light Application">
+        Title="Pixello ToDo">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -36,24 +36,35 @@
             </Button.CacheMode>
         </Button>
         <ListView x:Name="listView" Margin="10,115,22,17" ItemsSource="{Binding DataOperationViewModel.TaskItems}" BorderBrush="Black">
+
             <ListView.View>
-                <GridView>
+                <GridView >
+                    
                     <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="{Binding InterfaceDataViewModel.ListNameDescription}"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Tags}" Header="{Binding InterfaceDataViewModel.ListTagsDescription}"/>
                     <GridViewColumn DisplayMemberBinding="{Binding TaskPirority}" Header="{Binding InterfaceDataViewModel.ListTaskPirorityDescription}"/>
                     <GridViewColumn Header="{Binding InterfaceDataViewModel.ListIsDoneDescription}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <CheckBox IsChecked="{Binding IsCompleted}" Command="{Binding DataOperationViewModel.ModifyCommand, Source={StaticResource Locator}}" CommandParameter="{Binding Mode=OneWay}"></CheckBox>
+                                <CheckBox IsChecked="{Binding IsCompleted}" Command="{Binding DataOperationViewModel.ModifyCommand, Source={StaticResource Locator}}" CommandParameter="{Binding Mode=OneWay}" Background="{x:Null}" BorderBrush="Black"></CheckBox>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button CommandParameter="{Binding AccessName}" Command="{Binding DataOperationViewModel.DeleteCommand, Source={StaticResource Locator}}" Content="Del"/>
+                                <Button CommandParameter="{Binding AccessName}" Command="{Binding DataOperationViewModel.DeleteCommand, Source={StaticResource Locator}}" Content="Del" Background="{x:Null}" BorderBrush="Black"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
+                        
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button CommandParameter="{Binding AccessName}" Command="{Binding DataOperationViewModel.OpenFileCommand, Source={StaticResource Locator}}" Content="Open"  Background="{x:Null}" BorderBrush="Black"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+
                     </GridViewColumn>
                 </GridView>
             </ListView.View>

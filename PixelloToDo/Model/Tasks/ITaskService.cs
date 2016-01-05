@@ -6,6 +6,7 @@ namespace PixelloToDo.Model.Tasks
 {
     public interface ITaskService
     {
+        void OpenFile(string AccessName);
         IEnumerable<TaskItem> GetTasksCollection();
         Task SaveTaskToFile(TaskItem taskItem);
         Task<ObservableCollection<TaskItem>> GetTasksObservableCollectionAsync();

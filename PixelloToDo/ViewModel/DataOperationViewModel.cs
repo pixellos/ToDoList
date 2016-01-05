@@ -23,21 +23,33 @@ namespace PixelloToDo.ViewModel
             catch (Exception ex)
             {
                 _logger.LogIt(ex.Message);
+                throw;
             }
 
             TaskAddCommand = new RelayCommand(SaveTask);
             DeleteCommand = new RelayCommand<object>(DeleteTask);
             ModifyCommand = new RelayCommand<object>(ModifyTask);
+            OpenFileCommand = new RelayCommand<object>(OpenFile);
             _logger.LogIt("DataOperationViewModel initialized");
 
         }
         public RelayCommand<object> DeleteCommand { get; set; }
         public RelayCommand TaskAddCommand { get; set; }
         public RelayCommand<object> ModifyCommand { get; set; }
+        public RelayCommand<object> OpenFileCommand { get; set; }
 
         private void ModifyTask(object TaskItem)
         {
             _taskService.ModifyCompletedProperty(TaskItem as TaskItem);
+        }
+
+        private void OpenFile(object accessName)
+        {
+            if (accessName is string)
+            {
+                _taskService.OpenFile(accessName as string);
+            }
+
         }
 
         private async void DeleteTask(object accessName)

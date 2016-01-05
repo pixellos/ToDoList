@@ -37,6 +37,11 @@ namespace PixelloToDo.Design
             MessageBox.Show("Modifying");
         }
 
+        public void OpenFile(string AccessName)
+        {
+            MessageBox.Show("Opening..");
+        }
+
         public IEnumerable<TaskItem> GetTasksCollection()
         {
             return new ObservableCollection<TaskItem>(new List<TaskItem>()

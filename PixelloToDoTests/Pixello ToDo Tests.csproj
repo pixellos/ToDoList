@@ -56,7 +56,7 @@
     <Compile Include="ViewModel\DataOperationViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmLight1\Pixello ToDo.csproj">
+    <ProjectReference Include="..\PixelloToDo\Pixello ToDo.csproj">
       <Project>{0F944A7D-573A-418D-8376-AC59B359FEC1}</Project>
       <Name>Pixello ToDo</Name>
     </ProjectReference>
